@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*-------------------filters--------------------*/
+
+.filters {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.filterBtn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.filterBtn:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
