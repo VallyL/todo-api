@@ -4,25 +4,262 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-
-/*-------------------filters--------------------*/
+body {
+  background-color: #fffbff;
+  height: 100vh;
+}
+main {
+  width: 100%;
+  padding: 15px;
+  padding-bottom: 1000px;
+  height: 100%;
+}
+h2 {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+/*-----------------------------------------------------------*/
+.search {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  background-color: #6650a43b;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.searchInput {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.material-symbols-outlined {
+  margin-right: 15px;
+  cursor: pointer;
+}
+/*---------------------------------------------------------*/
+.taskForm {
+  background-color: #6650a43b;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+.taskForm > input {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  appearance: none;
+  padding-left: 15px;
+  cursor: pointer;
+  border: 1px solid #79747e;
+  border-radius: 6px;
+  height: 56px;
+  margin-bottom: 15px;
+}
+.taskDate {
+  color: #6f6a77;
+}
+.taskForm > div {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  height: 40px;
+}
+.taskForm > div > button {
+  height: 100%;
+  width: 114px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.addTask {
+  border: none;
+  color: white;
+  background-color: #6750a4;
+}
+.clear {
+  color: #6750a4;
+  border: 2px solid #6750a4;
+  background: none;
+  margin-left: 5px;
+}
+/*----------------------------------------------------------
+  .filters {
+    width: 100%;
+    height: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid rgb(9, 8, 8);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .filters > button {
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--main-bg-color);
+    transition: all 0.15s linear;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgb(0, 0, 0);
+    background-color: #fffbff;
+  }
+  .activeBtnActive {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .allBtnActive {
+    background-color: var(--second-accent-color);
+    color: black;
+  }*/
 
 .filters {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 25px;
+  width: 100%;
+  height: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 24px;
   overflow: hidden;
 }
-
-.filterBtn {
-  flex: 1;
-  padding: 10px;
+.red {
   border: none;
-  background-color: white;
+  outline: none;
+  overflow: hidden;
   cursor: pointer;
-  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s linear;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: black;
+  background-color: transparent;
+}
+.activeBtnActive {
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.red:focus {
+  background-color: #6650a43b;
+}
+/*---------------------------------------------------------------*/
+.checkbox {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.filterBtn:not(:last-child) {
-  border-right: 1px solid #ccc;
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+  transition: all 0.15s linear;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #6750a4;
+  border-color: transparent;
+}
+
+.checkbox:has(input[type="checkbox"]:checked) .checkbox__check-icon {
+  opacity: 100%;
+}
+
+.checkbox__check-icon {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  pointer-events: none;
+  font-size: 20px !important;
+  color: #000000;
+  transition: all 0.15s linear;
+  opacity: 0%;
+}
+
+.floatbutton {
+  background-color: #c1b6de;
+  box-shadow: 0px 4px 3px 3px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  width: 56px;
+  height: 56px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}
+
+.floatbutton span {
+  color: black;
+  cursor: pointer;
+}
+
+.todo-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 8px;
+  background-color: #6650a43b;
+  border-radius: 16px;
+  min-height: 62px;
+  margin: 10px 0px;
+}
+
+.todo-block span {
+  margin-left: auto;
+  cursor: pointer;
+  color: #000000;
+}
+
+.todo-block:has(input[type="checkbox"]:checked) > .todo-block__data {
+  text-decoration: line-through;
+  color: rgba(29, 27, 30, 0.7) !important;
+}
+
+.todo-block__data {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-block__date {
+  font-size: 14px;
+  color: inherit;
+}
+
+.todo-block__title {
+  font-size: 16px;
+  font-weight: 400;
+  color: inherit;
 }

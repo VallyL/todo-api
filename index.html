@@ -15,38 +15,78 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body>
-    <section class="firstDate">
-      <h2 class="todayDay"></h2>
-      <p></p>
-    </section>
-    <section class="search">
-      <input type="text" placeholder="Search" />
-      <span class="material-symbols-outlined"> search </span>
-    </section>
-    <form class="newNote">
-      <h2>New note</h2>
-      <div>
-        <input type="text" placeholder="Description" class="noteInp desInp" />
-        <input type="datetime-local" class="noteInp dateInp" />
+    <main>
+      <section class="firstDate">
+        <h2 class="todayDay"></h2>
+      </section>
+
+      <section class="search">
+        <input
+          type="text"
+          class="search input searchInput"
+          placeholder="Search tasks"
+        />
+        <span class="material-symbols-outlined">search</span>
+      </section>
+
+      <h2 class="newNotePar">New Note</h2>
+
+      <form class="taskForm">
+        <input
+          type="text"
+          class="taskTitle"
+          name="taskTitle"
+          placeholder="Description"
+          required
+        />
+        <input
+          type="datetime-local"
+          class="taskDate"
+          name="taskDate"
+          required
+        />
         <div>
-          <input type="submit" value="Add" class="btnNote sub" />
-          <input type="reset" value="Clear" class="btnNote res" />
+          <button type="submit" class="addTask">Add task</button>
+          <button type="reset" class="clear">Clear</button>
         </div>
-      </div>
-    </form>
-    <section class="taskList">
-      <h2>Task List</h2>
-      <div class="filters">
-        <button class="filterBtn" data-filter="all">All</button>
-        <button class="filterBtn" data-filter="active">Active</button>
-        <button class="filterBtn" data-filter="completed">Completed</button>
-      </div>
-    </section>
-    <section class="tasks">
-      <ul class="tasksContainer"></ul>
-    </section>
+      </form>
+
+      <h2 class="taskParagraph">Task List</h2>
+
+      <section class="taskList">
+        <div class="filters">
+          <button
+            class="allBtn allBtnActive red"
+            onclick="splitButtonClickHandler(this)"
+          >
+            All
+          </button>
+          <button
+            class="activeBtn activeBtnActive red"
+            onclick="splitButtonClickHandler(this)"
+          >
+            Active
+          </button>
+          <button
+            class="completedBtn completedBtnActive red"
+            onclick="splitButtonClickHandler(this)"
+          >
+            Completed
+          </button>
+        </div>
+        <ul class="todolist"></ul>
+      </section>
+
+      <button class="floatbutton">
+        <span class="material-symbols-rounded">edit</span>
+      </button>
+    </main>
     <script src="scripts/index.js"></script>
   </body>
 </html>
